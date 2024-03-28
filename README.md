@@ -13,13 +13,13 @@
     - Kubelet (cAdivsor) ⇒ Exposing container level metrics.
     - Kube-state-metrics ⇒ Cluster level metric (deployments, pod metrics)
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ebca8599-9dba-4cb3-a5bb-94303ff7200e/b4e09581-e39d-4e64-a0b7-371ed56ed9f4/Untitled.png)
+        ![Untitled](./Images/Screenshot%202024-03-21%20183102.png)
         
         The Kube-state-metric must be deployed as a container to access cluster level metrics
         
     - Node-exporter - Run on all nodes for host related metrics (cpu, memory, network)
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ebca8599-9dba-4cb3-a5bb-94303ff7200e/5618c6a1-02cf-4cc9-99c1-37c1fb7b5771/Untitled.png)
+        ![Untitled](./Images/Screenshot%202024-03-21%20183324.png)
         
         By utilizing the feature of `deamonSet` we can set to pod which contain the node-exporter will be deployed automatically when new nodes are created.
         
@@ -28,7 +28,7 @@
 
 This is one of the feature of Prometheus. To dynamically discovery the target nodes Prometheus will reach out to `Kubernetes API` and request for all kube components, Node Exporters, Kube-state-metrics
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ebca8599-9dba-4cb3-a5bb-94303ff7200e/e6761f31-d4ca-4f1f-b39e-d0b5fd15e370/Untitled.png)
+![Untitled](./Images/Screenshot%202024-03-21%20183939.png)
 
 which will remove the side hassle of manually entering the targetting the nodes IP and its Port. 
 
@@ -36,7 +36,7 @@ which will remove the side hassle of manually entering the targetting the nodes 
 
 Best way to deploy it is using `Helm chart` to deploy prometheus operator. In this way we can make use of helm to deploy all of the different components of pormetheus.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ebca8599-9dba-4cb3-a5bb-94303ff7200e/1b4c5bed-ec84-4408-bde2-43eb9aca6ad4/Untitled.png)
+![Untitled](./Images/Screenshot%202024-03-22%20144540.png)
 
 ### What is Helm?
 
